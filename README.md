@@ -4,8 +4,8 @@ Docker image(s) for deep learning
 ## dl-base
 Image containing Anaconda, Theano, Tensorflow, Lasagne, Keras (inspired by https://github.com/floydhub/dl-docker)
 
-## del-conda-env
-Image that can be configured with a conda environment file.
+## del-env
+Image that can be configured with a conda environment file and/or a virtualenv environment file.
 
 ## Running a container
 You will need:

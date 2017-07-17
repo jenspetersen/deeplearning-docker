@@ -20,9 +20,13 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -
 		rm miniconda.sh
 ENV PATH=/root/miniconda2/bin:$PATH
 
-# Set up environment
+# Install conda environment packages
 COPY environment.yml /root/
 RUN conda env update -n root -f /root/environment.yml && rm /root/environment.yml
+
+# Install virtualenv environment packages
+COPY requirements.txt /root/
+RUN pip install -r /root/requirements.txt && rm /root/requirements.txt
 
 WORKDIR "/root"
 CMD ["/bin/bash"]
